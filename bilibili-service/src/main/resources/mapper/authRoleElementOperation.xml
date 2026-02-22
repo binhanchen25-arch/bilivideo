@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD MAPPER 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bilibili.dao.AuthRoleElementOperationDao">
+    <resultMap id="AuthElementOperationResultMap" type="com.bilibili.domain.auth.AuthRoleElementOperation">
+        <id property="id" column="id" />
+        <id property="roleId" column="roleId" />
+        <id property="elementOperationId" column="elementOperationId" />
+        <association property="authElementOperation" javaType="com.bilibili.domain.auth.AuthElementOperation">
+            <id property="elementName" column="elementName" />
+            <id property="elementCode" column="elementCode" />
+            <id property="operationType" column="operationType" />
+        </association>
+    </resultMap>
+
+    <select id="getRoleElementOperationsByRoleIds" parameterType="java.util.Set" resultMap="AuthElementOperationResultMap">
+        select
+            areo.*,
+            aeo.elementName,
+            aeo.elementCode,
+            aeo.operationType
+        from
+            t_auth_role_element_operation areo
+            left join t_auth_element_operation aeo on areo.elementOperationId = aeo.id
+        where
+            areo.roleId in
+            <foreach collection="roleIdSet" separator="," open="(" close=")" index="index" item="roleId">
+                #{roleId}
+            </foreach>
+    </select>
+ </mapper>
