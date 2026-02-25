@@ -56,14 +56,7 @@ bilibili/
 - Elasticsearch：`elasticsearch.url`
 - FastDFS：`fdfs.*`
 
-### 启动
 
-```bash
-# 在 bilivideo-api 模块下运行
-mvn spring-boot:run
-```
-
-主启动类：`com.imooc.ImoocBilibiliApp`
 
 ## 接口风格
 
