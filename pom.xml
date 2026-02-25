@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>bilibili-api</module>
-        <module>bilibili-dao</module>
-        <module>bilibili-service</module>
+        <module>bilivideo-api</module>
+        <module>bilivideo-dao</module>
+        <module>bilivideo-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

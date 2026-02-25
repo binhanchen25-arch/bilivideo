@@ -9,7 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bilibili-dao</artifactId>
+    <artifactId>bilivideo-service</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.imooc</groupId>
+            <artifactId>bilivideo-dao</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
